@@ -1,0 +1,43 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+    <br />
+    <h3><%= @art.name %></h3>
+    <div>
+      <% @art.lists.each do |n| %>
+      <div class="row  mt-4 clearfix">
+        <div class="col-8 col-sm-8 col-md-9 col-lg-9">
+        <strong class="block font-medium mb-1">
+          <a href="/lists/<%= n.id %>",
+          class="nav-link"><%= n.title %></a>
+        </strong>
+        <%= truncate(strip_tags(n.body.to_s), length:120) %>
+        </div>
+        <div class="col-4 col-sm-4 col-md-3 col-lg-3 clearfix">
+        <% if n.image.attached? %>
+          <%= link_to image_tag(n.image,
+          style:"width:100px; heigh:auto; nav-link; nav-right;"),
+          n.image %>
+        <% end %>
+        </div>
+      </div>
+      <hr />
+      <% end %>
+    </div>
+    <br />
+    <% if user_signed_in? %>
+    <%= link_to 'Edit this art', edit_art_path(@art), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'Destroy this art', art_path(@art), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <% end %>
+    <%= link_to 'Back to arts', arts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr />
+    <div class="flex justify-between items-center">
+      <%= link_to 'New art', new_art_path,
+      class: "rounded-lg py-3 px-5 bg-blue-600
+      1text-white block font-medium" %>
+    </div>
+  </div>
+</div>
