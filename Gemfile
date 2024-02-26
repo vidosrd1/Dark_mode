@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+#ruby "3.2.2"
+ruby "3.3.0"
 gem "rails", "~> 7.1.2"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
@@ -16,9 +17,14 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
-gem 'tailwindcss-rails', '~> 2.1'
+gem 'tailwindcss-rails', '~> 2.3'
 gem 'pagy', '~> 6.2'
+gem 'administrate', '~> 0.20.1'
 gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'ancestry'
+gem 'jquery-rails', '~> 4.6'
+gem 'acts-as-taggable-on', '~> 10.0'
+gem 'awesome_nested_set', '~> 3.6'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]

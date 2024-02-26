@@ -17,7 +17,19 @@
           <%= link_to 'Lists', lists_path,
           class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to 'Categories', cats_path,
+          class: "nav-link" %>
+        </li>
         <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Tags', tags_path,
+          class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Articles', articles_path,
+          class: "nav-link" %>
+        </li>
         <% end %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

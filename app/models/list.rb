@@ -1,4 +1,6 @@
 class List < ApplicationRecord
+  async_pluck
+  #async_count_by_sql
   belongs_to :art
   has_one_attached :image
   has_rich_text :body

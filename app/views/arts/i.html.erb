@@ -1,3 +1,21 @@
+<%= link_to "Back to arts", arts_path,
+class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+<% if user_signed_in? %>
+<br />
+<div class="flex justify-between items-center">
+  <%= link_to 'New art', new_art_path,
+  class: "rounded-lg py-3 px-5 bg-blue-600
+  1text-white block font-medium" %>
+</div>
+<% end %>
+<div class="flex justify-between items-center">
+  <%= render 'arts/arts-index' %>
+</div>
+<br />
+<div class="flex justify-between items-center">
+  <h1 class="font-bold text-4xl">Arts</h1>
+</div>
 <% if @pagy.count > @pagy.items %>
 <div class="mt-10">
   <%== pagy_bootstrap_nav(@pagy) %>

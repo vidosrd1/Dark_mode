@@ -1,10 +1,13 @@
-<h1>Editing list</h1>
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">Editing list</h1>
 
-<%= render "form", list: @list %>
+  <%= render "form", list: @list %>
 
-<br>
-
-<div>
-  <%= link_to "Show this list", @list %> |
-  <%= link_to "Back to lists", lists_path %>
+  <%= link_to "Show this post", @list,
+  class: "ml-2 rounded-lg py-2 px-3 bg-gray-100
+  1dark:text-white dark:text-slate-800  inline-block font-medium" %>
+  <%= link_to "Back to posts", lists_path,
+  class: "bg-gray-500 ml-1 mt-1 rounded-lg py-2 px-3
+  dark:text-white dark:text-slate-800 1bg-gray-100
+  inline-block font-medium" %>
 </div>

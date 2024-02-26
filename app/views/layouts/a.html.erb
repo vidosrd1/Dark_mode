@@ -1,4 +1,15 @@
-<%= javascript_importmap_tags "application", "data-turbo-track": "reload", defer: true %> 
+dark:text-white
+dark:text-slate-800
+<%= image_tag("icons/_VS.svg",
+class: 'w-72 h-80 hover:cursor-pointer',
+data: { action: 'click->dark-mode#toggle'}) %>
+<br />
+<%= render 'layouts/color' %>
+<div class="container mx-auto mt-1 px-2 flex">
+  <%= render 'layouts/na' %>
+</div>
+<%= render 'layouts/navba' %>
+<%= javascript_importmap_tags "application", "data-turbo-track": "reload", defer: true %>
 <li class="nav-item">
   <%= link_to 'Cates', cates_path,
   class: "nav-link" %>
