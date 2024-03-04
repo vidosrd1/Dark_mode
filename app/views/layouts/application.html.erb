@@ -52,7 +52,7 @@
 
       <div class="text-gray-500 flex space-x-1">
         <div data-controller="dark-mode">
-          <%= image_tag("icons/_VS2.svg",
+          <%= image_tag("icons/_VS3.svg",
           class: 'w-24 h-20 hover:cursor-pointer',
           data: { action: 'click->dark-mode#toggle'}) %>
         </div>
@@ -83,8 +83,10 @@
         </div>
       </div>
     </header>
+    <main class="container mx-auto 1py-8 max-w-4xl">
     <div class="container mx-auto mt-1 px-2 flex">
       <%= yield %>
     </div>
+    </main>
   </body>
 </html>
